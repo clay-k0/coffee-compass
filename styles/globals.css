@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "AbovetheBeyondSerif-Regular";
+  src: url("../public/fonts/AbovetheBeyondSerif-Regular.ttf") format("truetype");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: AbovetheBeyondSerif-Regular, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+
+  background: url("/static/background2.png");
+
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #647369;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+  font-weight: 600;
+  font-family: Above the beyond serif;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto #475049;
+}
+
+:root {
+  --text-green: #647369;
+  --text-green-dark: #58655c;
+  --text-black: black;
+  --text-white-100: #f9fafb;
+}
