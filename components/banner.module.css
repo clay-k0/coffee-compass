@@ -14,7 +14,7 @@
 }
 
 .title1 {
-  color: rgba(53, 38, 28, 0.751);
+  color: var(--text-brown);
   font-size: 7rem;
   padding-left: 0.5rem;
 }
@@ -30,8 +30,8 @@
   margin-top: 0.75rem;
   font-size: 1.7rem;
   line-height: 2rem;
-  color: rgba(47, 47, 47, 0.704);
-  margin-left: 0.5rem;
+  color: var(--text-gray);
+  margin-left: 1rem;
   font-weight: 500;
 }
 
@@ -43,19 +43,21 @@
 .button {
   background-color: var(--text-green);
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.834);
+  color: rgba(255, 255, 255, 0.924);
 
   outline: 0;
   border: 0;
-  padding: 1rem 2.5rem;
+  padding: 3rem 5rem 3rem 5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  border-radius: 10px;
+  border-radius: 15px;
+
+  width: 25rem;
 }
 
 .button:hover {
   background-color: var(--text-green-dark);
-  color: rgba(205, 205, 205, 0.834);
+  color: rgb(187, 187, 187);
 }
 
 /** Small screens **/
@@ -133,18 +135,3 @@
     display: inline;
   }
 }
-
-/* @media only screen and (max-width: 480px) and (-webkit-device-pixel-ratio: 3) {
-  .title1 {
-    font-size: 5rem;
-    color: rgba(23, 23, 23, 0.762);
-  }
-  .title2 {
-    font-size: 5rem;
-    color: rgba(30, 30, 30, 0.762);
-  }
-
-  .subtitle {
-    font-size: 1.7rem;
-  }
-} */

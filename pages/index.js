@@ -1,10 +1,24 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Banner from "../components/banner";
 
-export default function Home() {
+import Banner from "../components/banner";
+import Card from "../components/card";
+
+import coffeeStoresData from "../data/coffee-stores.json";
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      coffeeStoresData,
+    },
+  };
+}
+
+export default function Home(props) {
+  // const handleOnBannerButtonClick = () => {};
   const handleOnBannerButtonClick = () => {
-    console.log("Banner button clicked!");
+    const coffeeStoresShops = document.getElementById("coffee-stores");
+    coffeeStoresShops.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -22,6 +36,30 @@ export default function Home() {
             buttonText='view shops nearby'
             handleOnClick={handleOnBannerButtonClick}
           />
+          {props.coffeeStoresData.length > 0 ? (
+            <>
+              <h2 id='coffee-stores' className={styles.heading2}>
+                virginia beach coffee shops
+              </h2>
+              <div className={styles.cardLayout}>
+                {props.coffeeStoresData.map((coffeeStore) => {
+                  return (
+                    <Card
+                      key={coffeeStore.id}
+                      shopName={coffeeStore.shopName}
+                      imgURL={coffeeStore.imgURL}
+                      href={`/coffee-store/${coffeeStore.id}`}
+                      className={styles.card}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            <h2 className={styles.heading2}>
+              sorry... no coffee shops found :(
+            </h2>
+          )}
         </main>
       </div>
     </>

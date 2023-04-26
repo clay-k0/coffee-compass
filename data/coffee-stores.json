@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "shopName": "StrangeLove Coffee",
+    "imgURL": "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+    "websiteURL": "https://www.strangelovecoffee.ca/",
+    "address": "983 Queen St E, Toronto, ON M4M 1K2",
+    "neighborhood": "at King and Spadina"
+  },
+  {
+    "id": 1,
+    "shopName": "Dark Horse Coffee",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://www.darkhorseespresso.com/",
+    "address": "401 Richmond St W",
+    "neighborhood": "Richmond and Spadina"
+  },
+  {
+    "id": 300,
+    "shopName": "Route 300",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://www.darkhorseespresso.com/",
+    "address": "401 Richmond St W",
+    "neighborhood": "Route 300 neighborhood"
+  },
+  {
+    "id": 3,
+    "shopName": "The Good Neighbour Espresso Bar",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://www.thegoodneighbour.com/",
+    "address": "678 Bloor St W, Toronto, ON M6G 1L2",
+    "neighborhood": "Christie Pits"
+  },
+  {
+    "id": 4,
+    "shopName": "Reunion Island Coffee Roasters",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://reunionislandcoffee.com/",
+    "address": "385 Roncesvalles Ave, Toronto, ON M6R 2N1",
+    "neighborhood": "Roncesvalles"
+  },
+  {
+    "id": 5,
+    "shopName": "Sam James Coffee Bar",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://www.samjamescoffeebar.com/",
+    "address": "15 Toronto St, Toronto, ON M5C 2E3",
+    "neighborhood": "Financial District"
+  },
+  {
+    "id": 6,
+    "shopName": "Dineen Coffee Co.",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://www.dineencoffee.com/",
+    "address": "140 Yonge St, Toronto, ON M5C 1X6",
+    "neighborhood": "Financial District"
+  },
+  {
+    "id": 7,
+    "shopName": "Boxcar Social",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://www.boxcarsocial.ca/",
+    "address": "235 Queens Quay W, Toronto, ON M5J 2G8",
+    "neighborhood": "Harbourfront"
+  },
+  {
+    "id": 8,
+    "shopName": "Balzac's Coffee Roasters",
+    "imgURL": "https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80",
+    "websiteURL": "https://www.balzacs.com/",
+    "address": "55 Mill St, Toronto, ON M5A 3C4",
+    "neighborhood": "Distillery District"
+  }
+]

@@ -17,7 +17,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: #647369;
-  height: 100%;
+  height: 100;
 }
 
 a {
@@ -54,12 +54,30 @@ button {
 
 button:focus {
   outline: 1px dotted;
-  outline: 5px auto #475049;
+  outline: 5px auto #454a46;
+}
+
+.glass {
+  background: hsla(0, 0%, 100%, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+
+  transition: transform 0.2s ease-in-out;
+}
+
+.glass:hover {
+  background: hsla(0, 0%, 100%, 0.553);
+  border: 1px solid #ffffff;
+
+  transform: scale(1.03);
 }
 
 :root {
   --text-green: #647369;
   --text-green-dark: #58655c;
+  --text-gray: #2f2f2fb4;
   --text-black: black;
   --text-white-100: #f9fafb;
+  --text-brown: #35261cc0;
 }
