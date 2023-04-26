@@ -43,7 +43,8 @@
 .button {
   background-color: var(--text-green);
   cursor: pointer;
-  color: rgba(237, 237, 237, 0.834);
+  color: rgba(255, 255, 255, 0.834);
+
   outline: 0;
   border: 0;
   padding: 1rem 2.5rem;
@@ -54,6 +55,7 @@
 
 .button:hover {
   background-color: var(--text-green-dark);
+  color: rgba(205, 205, 205, 0.834);
 }
 
 /** Small screens **/
