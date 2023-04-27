@@ -44,16 +44,42 @@ const CoffeeStore = (props) => {
 
   const handleUpvoteButton = () => {};
 
+  const handleDirectionsButton = () => {
+    const userAgent = navigator.userAgent.toLocaleLowerCase();
+    const isGoogleMaps = userAgent.indexOf("android") > -1;
+    const isAppleMaps = userAgent.indexOf("iphone") > -1;
+
+    if (isGoogleMaps) {
+      window.open(
+        `https://www.google.com/maps/dir/?api=1&destination=${address}`
+      );
+    }
+
+    if (isAppleMaps) {
+      window.open(`http://maps.apple.com/?daddr=${address}`);
+    }
+
+    if (!isGoogleMaps && !isAppleMaps) {
+      window.open(
+        `https://www.google.com/maps/dir/?api=1&destination=${address}`
+      );
+    }
+  };
+
   return (
     <div className={styles.layout}>
       <Head>
-        <title>{shopName}</title>
+        <title>{shopName} | coffee compass</title>
       </Head>
       <div className={styles.container}>
         <div className={styles.column1}>
           <div className={styles.backToHomeLink}>
-            <Link className={styles.backToHomeLinkText} href='/'>
-              back to home
+            <Link
+              className={styles.backToHomeLinkText}
+              href='/'
+              title='go back to homepage'
+            >
+              {"←"} back to home
             </Link>
           </div>
           <div className={styles.shopNameWrapper}>
@@ -62,8 +88,8 @@ const CoffeeStore = (props) => {
           <div className={styles.shopImgWrapper}>
             <Image
               src={imgURL}
-              width={600}
-              height={500}
+              width={630}
+              height={550}
               className={styles.shopImg}
               alt={shopName}
             />
@@ -77,6 +103,7 @@ const CoffeeStore = (props) => {
               src='/static/icons/places.svg'
               width={24}
               height={24}
+              title='address of coffee shop'
             />
             <p className={styles.text}>{address}</p>
           </div>
@@ -86,6 +113,7 @@ const CoffeeStore = (props) => {
               src='/static/icons/nearMe.svg'
               width={24}
               height={24}
+              title='district of coffee shop'
             />
             <p className={styles.text}>{neighborhood}</p>
           </div>
@@ -95,13 +123,27 @@ const CoffeeStore = (props) => {
               src='/static/icons/star.svg'
               width={24}
               height={24}
+              title='stars this coffee shop has'
             />
             <p className={styles.text}>1</p>
           </div>
 
-          <button className={styles.upvoteButton} onClick={handleUpvoteButton}>
-            upvote
-          </button>
+          <div className={styles.buttonWrapper}>
+            <button
+              className={styles.upvoteButton}
+              onClick={handleUpvoteButton}
+              title='upvote this coffee shop'
+            >
+              upvote
+            </button>
+            <button
+              className={styles.directionsButton}
+              onClick={handleDirectionsButton}
+              title='directions to this coffee shop'
+            >
+              directions
+            </button>
+          </div>
         </div>
       </div>
     </div>
