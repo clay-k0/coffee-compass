@@ -69,7 +69,7 @@ const CoffeeStore = (props) => {
   return (
     <div className={styles.layout}>
       <Head>
-        <title>{shopName} | coffee compass</title>
+        <title>{shopName}</title>
       </Head>
       <div className={styles.container}>
         <div className={styles.column1}>
@@ -103,7 +103,6 @@ const CoffeeStore = (props) => {
               src='/static/icons/places.svg'
               width={24}
               height={24}
-              title='address of coffee shop'
             />
             <p className={styles.text}>{address}</p>
           </div>
@@ -113,7 +112,6 @@ const CoffeeStore = (props) => {
               src='/static/icons/nearMe.svg'
               width={24}
               height={24}
-              title='district of coffee shop'
             />
             <p className={styles.text}>{neighborhood}</p>
           </div>
@@ -132,14 +130,12 @@ const CoffeeStore = (props) => {
             <button
               className={styles.upvoteButton}
               onClick={handleUpvoteButton}
-              title='upvote this coffee shop'
             >
               upvote
             </button>
             <button
               className={styles.directionsButton}
               onClick={handleDirectionsButton}
-              title='directions to this coffee shop'
             >
               directions
             </button>
