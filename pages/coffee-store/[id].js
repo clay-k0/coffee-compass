@@ -5,25 +5,27 @@ import Image from "next/image";
 
 import cls from "classnames";
 
-import coffeeStoresData from "../../data/coffee-stores.json";
-
 import styles from "../../styles/coffee-store.module.css";
 
-export function getStaticProps({ params }) {
+import { fetchCoffeeStores } from "../../lib/coffee-stores";
+
+export async function getStaticProps({ params }) {
+  const coffeeStores = await fetchCoffeeStores();
   return {
     props: {
-      coffeeStore: coffeeStoresData.find((coffeeStore) => {
-        return coffeeStore.id.toString() === params.id;
+      coffeeStore: coffeeStores.find((coffeeStore) => {
+        return coffeeStore.fsq_id.toString() === params.id;
       }),
     },
   };
 }
 
-export function getStaticPaths() {
-  const paths = coffeeStoresData.map((coffeeStore) => {
+export async function getStaticPaths() {
+  const coffeeStores = await fetchCoffeeStores();
+  const paths = coffeeStores.map((coffeeStore) => {
     return {
       params: {
-        id: coffeeStore.id.toString(),
+        id: coffeeStore.fsq_id.toString(),
       },
     };
   });
@@ -40,7 +42,7 @@ const CoffeeStore = (props) => {
     return <div>loading...</div>;
   }
 
-  const { imgURL, address, shopName, neighborhood } = props.coffeeStore;
+  const { imgURL, location, shopName } = props.coffeeStore;
 
   const handleUpvoteButton = () => {};
 
@@ -51,17 +53,17 @@ const CoffeeStore = (props) => {
 
     if (isGoogleMaps) {
       window.open(
-        `https://www.google.com/maps/dir/?api=1&destination=${address}`
+        `https://www.google.com/maps/dir/?api=1&destination=${location.address}`
       );
     }
 
     if (isAppleMaps) {
-      window.open(`http://maps.apple.com/?daddr=${address}`);
+      window.open(`http://maps.apple.com/?daddr=${location.address}`);
     }
 
     if (!isGoogleMaps && !isAppleMaps) {
       window.open(
-        `https://www.google.com/maps/dir/?api=1&destination=${address}`
+        `https://www.google.com/maps/dir/?api=1&destination=${location.address}`
       );
     }
   };
@@ -87,9 +89,12 @@ const CoffeeStore = (props) => {
           </div>
           <div className={styles.shopImgWrapper}>
             <Image
-              src={imgURL}
-              width={630}
-              height={550}
+              src={
+                imgURL ||
+                "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+              }
+              width={620}
+              height={520}
               className={styles.shopImg}
               alt={shopName}
             />
@@ -104,7 +109,7 @@ const CoffeeStore = (props) => {
               width={24}
               height={24}
             />
-            <p className={styles.text}>{address}</p>
+            <p className={styles.text}>{location.address}</p>
           </div>
           <div className={styles.iconWrapper}>
             <Image
@@ -113,7 +118,7 @@ const CoffeeStore = (props) => {
               width={24}
               height={24}
             />
-            <p className={styles.text}>{neighborhood}</p>
+            <p className={styles.text}>{location.locality}</p>
           </div>
           <div className={styles.iconWrapper}>
             <Image
