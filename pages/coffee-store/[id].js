@@ -14,7 +14,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       coffeeStore: coffeeStores.find((coffeeStore) => {
-        return coffeeStore.fsq_id.toString() === params.id;
+        return coffeeStore.id.toString() === params.id;
       }),
     },
   };
@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   const paths = coffeeStores.map((coffeeStore) => {
     return {
       params: {
-        id: coffeeStore.fsq_id.toString(),
+        id: coffeeStore.id.toString(),
       },
     };
   });
@@ -42,7 +42,7 @@ const CoffeeStore = (props) => {
     return <div>loading...</div>;
   }
 
-  const { imgURL, location, shopName } = props.coffeeStore;
+  const { imgURL, address, city, shopName } = props.coffeeStore;
 
   const handleUpvoteButton = () => {};
 
@@ -53,17 +53,17 @@ const CoffeeStore = (props) => {
 
     if (isGoogleMaps) {
       window.open(
-        `https://www.google.com/maps/dir/?api=1&destination=${location.address}`
+        `https://www.google.com/maps/dir/?api=1&destination=${address}`
       );
     }
 
     if (isAppleMaps) {
-      window.open(`http://maps.apple.com/?daddr=${location.address}`);
+      window.open(`http://maps.apple.com/?daddr=${address}`);
     }
 
     if (!isGoogleMaps && !isAppleMaps) {
       window.open(
-        `https://www.google.com/maps/dir/?api=1&destination=${location.address}`
+        `https://www.google.com/maps/dir/?api=1&destination=${address}`
       );
     }
   };
@@ -81,7 +81,7 @@ const CoffeeStore = (props) => {
               href='/'
               title='go back to homepage'
             >
-              {"←"} back to home
+              ← back to home
             </Link>
           </div>
           <div className={styles.shopNameWrapper}>
@@ -93,8 +93,8 @@ const CoffeeStore = (props) => {
                 imgURL ||
                 "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
               }
-              width={620}
-              height={520}
+              width={680}
+              height={420}
               className={styles.shopImg}
               alt={shopName}
             />
@@ -102,24 +102,28 @@ const CoffeeStore = (props) => {
         </div>
 
         <div className={cls("glass", styles.column2)}>
-          <div className={styles.iconWrapper}>
-            <Image
-              alt='address icon'
-              src='/static/icons/places.svg'
-              width={24}
-              height={24}
-            />
-            <p className={styles.text}>{location.address}</p>
-          </div>
-          <div className={styles.iconWrapper}>
-            <Image
-              alt='near me icon'
-              src='/static/icons/nearMe.svg'
-              width={24}
-              height={24}
-            />
-            <p className={styles.text}>{location.locality}</p>
-          </div>
+          {address && (
+            <div className={styles.iconWrapper}>
+              <Image
+                alt='address icon'
+                src='/static/icons/places.svg'
+                width={24}
+                height={24}
+              />
+              <p className={styles.text}>{address}</p>
+            </div>
+          )}
+          {city && (
+            <div className={styles.iconWrapper}>
+              <Image
+                alt='near me icon'
+                src='/static/icons/nearMe.svg'
+                width={24}
+                height={24}
+              />
+              <p className={styles.text}>{city}</p>
+            </div>
+          )}
           <div className={styles.iconWrapper}>
             <Image
               alt='star icon'
