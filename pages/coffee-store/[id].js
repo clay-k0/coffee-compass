@@ -71,16 +71,12 @@ const CoffeeStore = (props) => {
   return (
     <div className={styles.layout}>
       <Head>
-        <title>{shopName}</title>
+        <title>{`${shopName} | coffee compass`}</title>
       </Head>
       <div className={styles.container}>
         <div className={styles.column1}>
           <div className={styles.backToHomeLink}>
-            <Link
-              className={styles.backToHomeLinkText}
-              href='/'
-              title='go back to homepage'
-            >
+            <Link className={styles.backToHomeLinkText} href='/'>
               ← back to home
             </Link>
           </div>
@@ -93,8 +89,8 @@ const CoffeeStore = (props) => {
                 imgURL ||
                 "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
               }
-              width={680}
-              height={420}
+              width={730}
+              height={500}
               className={styles.shopImg}
               alt={shopName}
             />
@@ -130,7 +126,6 @@ const CoffeeStore = (props) => {
               src='/static/icons/star.svg'
               width={24}
               height={24}
-              title='stars this coffee shop has'
             />
             <p className={styles.text}>1</p>
           </div>

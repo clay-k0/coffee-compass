@@ -16,9 +16,9 @@
 
 .backToHomeLink {
   margin-top: 6rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.75rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 6rem;
   font-weight: 800;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .backToHomeLinkText:hover {
-  color: #53443bd8;
+  color: #605854d8;
 }
 
 .shopNameWrapper {
@@ -37,7 +37,7 @@
 
 .shopName {
   color: var(--text-green);
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   line-height: 2.5rem;
   text-overflow: ellipsis;
   white-space: normal;
@@ -45,12 +45,12 @@
 }
 
 .shopImgWrapper {
-  background-color: rgba(255, 255, 255, 0.299);
+  background-color: rgba(255, 255, 255, 0.363);
   border-radius: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
@@ -78,7 +78,7 @@
   flex-direction: column;
   margin-left: 4rem;
   align-self: center;
-  margin-top: 10rem;
+  margin-top: 13.5rem;
   color: #191919d5;
 
   height: 15rem;
@@ -179,10 +179,49 @@
   }
 }
 
-@media (min-width: 768px) {
-  .layout {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+@media (max-width: 767px) {
+  .shopImgWrapper {
+    padding: 1rem;
+  }
+
+  .shopImg {
+    max-height: 35vh;
+    max-width: 100%;
+  }
+
+  .column2 {
+    margin-left: 0;
+    margin-top: 2rem;
+    height: 19rem;
+  }
+
+  .buttonWrapper {
+    margin-top: 1.5rem;
+  }
+
+  .upvoteButton,
+  .directionsButton {
+    background-color: var(--text-green);
+    color: var(--text-white-100);
+
+    /* increase button size */
+    width: 6rem;
+    height: 3.2rem;
+    font-size: 1.1rem;
+  }
+
+  .text {
+    font-size: 1.8rem;
+    letter-spacing: 0.02rem;
+  }
+
+  .shopName {
+    color: var(--text-gray);
+    margin-top: -2rem;
+  }
+
+  .container {
+    margin-top: -7rem;
   }
 }
 

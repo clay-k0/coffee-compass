@@ -10,25 +10,25 @@
   color: var(--text-black);
   font-size: 3rem;
   line-height: 1;
-  margin-top: 15rem;
+  margin-top: 16rem;
 }
 
 .title1 {
   color: var(--text-brown);
-  font-size: 7rem;
+  font-size: 7.5rem;
   padding-left: 0.5rem;
 }
 
 .title2 {
   display: block;
   color: var(--text-green);
-  font-size: 7rem;
+  font-size: 7.5rem;
   padding-left: 0.5rem;
 }
 
 .subtitle {
   margin-top: 0.75rem;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   line-height: 2rem;
   color: var(--text-gray);
   margin-left: 1rem;
@@ -36,7 +36,7 @@
 }
 
 .buttonWrapper {
-  margin-top: 13rem;
+  margin-top: 11rem;
   margin-left: 0rem;
 }
 
@@ -55,6 +55,7 @@
   width: 26rem;
 
   transition: transform 0.3s ease-in-out;
+  margin-bottom: 7rem;
 }
 
 .button:hover {
@@ -73,7 +74,7 @@
 
   .title1,
   .title2 {
-    font-size: 4rem;
+    font-size: 5.2rem;
   }
 
   .subtitle {
@@ -82,13 +83,25 @@
   }
 
   .button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    border-radius: 20px;
+    width: 22rem;
+    height: 3rem;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonWrapper {
+    margin-top: 2rem;
+    margin-left: 0rem;
   }
 }
 /** md breakpoint **/
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .title {
     font-size: 3.75rem;
     line-height: 1;
